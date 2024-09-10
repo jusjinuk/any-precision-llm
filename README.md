@@ -122,7 +122,7 @@ python quantize.py meta-llama/Llama-2-7b-chat-hf
 Our quantization pipeline is designed to support any model that can be loaded from the Hugging Face repository,
 by automatically detecting the linear layers for quantization. However, for better reproducibility,
 we have preconfigured YAML files for the Llama, OPT, and Mistral models under the
-path `any_precision_llm/analyzer/architectures`.
+path `any_precision/analyzer/architectures`.
 
 This is what the YAML file for the Llama model looks like:
 
@@ -146,7 +146,7 @@ Under `arch_config`, the `model_name` field specifies the name of the model attr
 The `layers_name` field specifies the name of the attribute that contains the layers of the model, under the model.
 The `module_names` field specifies the names of the linear layers to quantize.
 
-For models with no corresponding YAML file under `any_precision_llm/analyzer/architectures`, the quantization process
+For models with no corresponding YAML file under `any_precision/analyzer/architectures`, the quantization process
 will attempt to automatically detect the linear layers to quantize. This is not guaranteed to work, and may result in
 incorrect quantization.
 
